@@ -37,7 +37,7 @@ namespace Greating_card
                 fG.FillEllipse(whiteBrush, 250,100,10,10);
                 fG.FillEllipse(whiteBrush, 295, 150, 10, 10);
                 fG.FillEllipse(whiteBrush, 345, 175, 10, 10);
-
+                fG.FillEllipse(whiteBrush, 380, 135, 10, 10);
 
 
 
