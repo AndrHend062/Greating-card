@@ -81,8 +81,12 @@ namespace Greating_card
                 Thread.Sleep(1000);
                 fG.DrawString("Virgo constellation ", textFont, drawBrush, 50, 40);
                 fG.DrawString("the virgo constellation is a latin word meaning virgin.  ", textFont, drawBrush, 10, 400);
+                Thread.Sleep(1000);
                 fG.DrawString("the virgo constellation is the second largest constellation in the sky   ", textFont, drawBrush, 10, 420);
-
+                Thread.Sleep(1000);
+                fG.FillRectangle(blackBrush, 0, 0, 400, 40);
+                Thread.Sleep(100);
+                fG.DrawString("Virgo constellation ", textFont, drawBrush, 100, 40);
 
                 flag = -1;
             }
