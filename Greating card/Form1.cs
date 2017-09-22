@@ -8,11 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
+using System.Media;
+
+
 namespace Greating_card
 {
     public partial class card : Form
     {
-
+        SoundPlayer upSound = new SoundPlayer(Properties.Resources.up);
         int flag = 0;
         public card()
         {
@@ -25,13 +28,17 @@ namespace Greating_card
         private void card_MouseClick(object sender, MouseEventArgs e)
         {
             Graphics fG = this.CreateGraphics();
+            Font textFont = new Font("Arial", 10, FontStyle.Bold);
+            SolidBrush drawBrush = new SolidBrush(Color.Red);
+
+
             fG.Clear(Color.White);
             SolidBrush blackBrush = new SolidBrush(Color.Black);
             SolidBrush whiteBrush = new SolidBrush(Color.White);
             SolidBrush redBrush = new SolidBrush(Color.Red);
             Pen drawPen = new Pen(Color.Yellow, 20);
             Pen starPen = new Pen(Color.White, 1);
-
+            upSound.Play();
             if (flag == 1) 
             {
                 fG.Clear(Color.Black);
@@ -55,13 +62,26 @@ namespace Greating_card
                 fG.DrawLine(starPen, 350, 180, 385, 140);
                 Thread.Sleep(500);
                 fG.DrawLine(starPen, 385, 140, 425, 75);
+                Thread.Sleep(500);
                 fG.DrawLine(starPen, 350, 180, 305, 250);// bottem of U to Mid
+                Thread.Sleep(500);
                 fG.DrawLine(starPen, 305, 250, 315, 315); //big to mid 
-                fG.DrawLine(starPen, 315, 315, 240, 240); // big to hip 
-                fG.DrawLine(starPen, 315, 315, 170, 330); //big to low leg 
-                fG.DrawLine(starPen, 170, 330, 115, 350);
+                Thread.Sleep(500);
                 fG.DrawLine(starPen, 300, 155, 240, 240); //left side
-                fG.DrawLine(starPen, 75, 285, 75, 285); // uppy leg 
+                Thread.Sleep(500);
+                fG.DrawLine(starPen, 315, 315, 240, 240); // big to hip 
+                Thread.Sleep(500);
+                fG.DrawLine(starPen, 315, 315, 170, 330); //big to low leg 
+                Thread.Sleep(500);
+                fG.DrawLine(starPen, 170, 330, 115, 350);
+                Thread.Sleep(500);
+                fG.DrawLine(starPen, 170, 250, 240, 240);
+                Thread.Sleep(500);
+                fG.DrawLine(starPen, 170, 250, 80, 290); // uppy leg 
+                Thread.Sleep(1000);
+                fG.DrawString("Virgo constellation ", textFont, drawBrush, 50, 40);
+                fG.DrawString("the virgo constellation is a latin word meaning virgin.  ", textFont, drawBrush, 10, 400);
+                fG.DrawString("the virgo constellation is the second largest constellation in the sky   ", textFont, drawBrush, 10, 420);
 
 
                 flag = -1;
@@ -69,7 +89,7 @@ namespace Greating_card
             else 
             {
                 fG.DrawRectangle(drawPen, 5, 5, 470, 200);
-                fG.FillRectangle(blackBrush, 0, 200, 490, 200);
+                fG.FillRectangle(blackBrush, 0, 200, 490, 300);
 
                 fG.FillRectangle(redBrush, 10, 5,465, 300);
                 flag += 1;
