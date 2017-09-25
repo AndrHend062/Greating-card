@@ -82,5 +82,8 @@
   <ItemGroup>
     <None Include="Resources\up.wav" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Alarm.wav" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

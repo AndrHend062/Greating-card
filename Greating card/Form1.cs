@@ -16,6 +16,7 @@ namespace Greating_card
     public partial class card : Form
     {
         SoundPlayer upSound = new SoundPlayer(Properties.Resources.up);
+        SoundPlayer alarmSound = new SoundPlayer(Properties.Resources.Alarm);
         int flag = 0;
         public card()
         {
@@ -30,6 +31,7 @@ namespace Greating_card
             Graphics fG = this.CreateGraphics();
             Font arialFont = new Font("Arial", 10, FontStyle.Bold);
             Font georgiaFont = new Font("Georgia", 10, FontStyle.Bold);
+            Font tital = new Font("Arial", 30, FontStyle.Bold);
             SolidBrush drawBrush = new SolidBrush(Color.Red);
             Graphics onScreen = this.CreateGraphics(); //Sets up on-screen graphics
             Bitmap bm = new Bitmap(this.Width, this.Height); //bitmap area size of whole screen
@@ -94,6 +96,22 @@ namespace Greating_card
                 fG.DrawString("Virgo constellation ", georgiaFont, drawBrush, 100, 40);
 
                 upSound.Play();
+
+                fG.FillEllipse(redBrush, 250, 100, 10, 10);
+                fG.FillEllipse(redBrush, 295, 150, 10, 10); // left lowwer u
+                fG.FillEllipse(redBrush, 345, 175, 10, 10); // bothem of top U  
+                fG.FillEllipse(redBrush, 380, 135, 10, 10); //
+                fG.FillEllipse(redBrush, 420, 70, 10, 10); //top cirle
+                fG.FillEllipse(redBrush, 300, 245, 10, 10); //middel
+                fG.FillEllipse(redBrush, 305, 305, 30, 30); // big one
+                fG.FillEllipse(redBrush, 235, 235, 10, 10);
+                fG.FillEllipse(redBrush, 170, 245, 10, 10);
+                fG.FillEllipse(redBrush, 165, 325, 10, 10); //leg 
+                fG.FillEllipse(redBrush, 75, 285, 10, 10); //upy foot 
+                fG.FillEllipse(redBrush, 110, 345, 10, 10);//foot 
+
+                alarmSound.Play();
+
                 flag = -1;
             }
             else 
@@ -103,8 +121,10 @@ namespace Greating_card
 
                 fG.FillRectangle(redBrush, 10, 5,465, 300);
 
-                fG.DrawString("greetings  ", georgiaFont, blackBrush, 100, 40);
-                fG.DrawString("this is a card   ", georgiaFont, blackBrush, 150, 40);
+                fG.DrawString("Greetings  ", tital, blackBrush, 100, 30);
+                fG.DrawString("This is a card   ", tital, blackBrush, 100, 60);
+                fG.DrawString("Greetings Travaler  ", tital, blackBrush, 100, 100);
+
                 flag += 1;
             }
 
