@@ -23,9 +23,6 @@ namespace Greating_card
         public card()
         {
             InitializeComponent();
-
-          
-
         }
 
         private void card_MouseClick(object sender, MouseEventArgs e)
@@ -39,7 +36,6 @@ namespace Greating_card
             Bitmap bm = new Bitmap(this.Width, this.Height); //bitmap area size of whole screen
             Graphics offScreen = Graphics.FromImage(bm); //Sets off-screen graphics to the bitmap
 
-
             fG.Clear(Color.White);
             SolidBrush blackBrush = new SolidBrush(Color.Black); //creating brushs
             SolidBrush whiteBrush = new SolidBrush(Color.White);
@@ -47,7 +43,7 @@ namespace Greating_card
             Pen drawPen = new Pen(Color.Yellow, 20);
             Pen starPen = new Pen(Color.White, 1);
             upSound.Play();
-            if (flag == 1) 
+            if (flag == 1)
             {
                 fG.Clear(Color.Black); //draw stars 
                 fG.FillEllipse(whiteBrush, 250, 100, 10, 10);
@@ -64,22 +60,21 @@ namespace Greating_card
                 fG.FillEllipse(whiteBrush, 110, 345, 10, 10);//foot 
 
                 fG.FillEllipse(whiteBrush, 10, 100, 10, 10); //other stars 
-                fG.FillEllipse(whiteBrush, 405, 350, 10, 10); 
-                fG.FillEllipse(whiteBrush, 35, 175, 10, 10);  
+                fG.FillEllipse(whiteBrush, 405, 350, 10, 10);
+                fG.FillEllipse(whiteBrush, 35, 175, 10, 10);
                 fG.FillEllipse(whiteBrush, 30, 135, 10, 10); //
-                fG.FillEllipse(whiteBrush, 400, 70, 10, 10); 
-                fG.FillEllipse(whiteBrush, 300, 25, 10, 10); 
-                fG.FillEllipse(whiteBrush, 240, 35, 30, 30); 
+                fG.FillEllipse(whiteBrush, 400, 70, 10, 10);
+                fG.FillEllipse(whiteBrush, 300, 25, 10, 10);
+                fG.FillEllipse(whiteBrush, 240, 35, 30, 30);
                 fG.FillEllipse(whiteBrush, 235, 235, 10, 10);
                 fG.FillEllipse(whiteBrush, 190, 275, 10, 10);
                 fG.FillEllipse(whiteBrush, 125, 375, 10, 10); //
                 fG.FillEllipse(whiteBrush, 75, 285, 10, 10); // 
                 fG.FillEllipse(whiteBrush, 190, 395, 10, 10);
 
-
                 Thread.Sleep(1000);
                 fG.Clear(Color.Black); // draw stars 
-                fG.FillEllipse(whiteBrush, 250,100,10,10);
+                fG.FillEllipse(whiteBrush, 250, 100, 10, 10);
                 fG.FillEllipse(whiteBrush, 295, 150, 10, 10); // left lowwer u
                 fG.FillEllipse(whiteBrush, 345, 175, 10, 10); // bothem of top U  
                 fG.FillEllipse(whiteBrush, 380, 135, 10, 10); //
@@ -125,7 +120,6 @@ namespace Greating_card
                 fG.FillRectangle(blackBrush, 0, 0, 400, 100);
                 Thread.Sleep(100);
                 fG.DrawString("Virgo constellation ", georgiaFont, greenBrush, 100, 40);
-
                 upSound.Play();
 
                 fG.FillEllipse(redBrush, 250, 100, 10, 10);
@@ -155,25 +149,19 @@ namespace Greating_card
                 fG.FillEllipse(greenBrush, 165, 325, 10, 10); //leg 
                 fG.FillEllipse(greenBrush, 75, 285, 10, 10); //upy foot 
                 fG.FillEllipse(greenBrush, 110, 345, 10, 10);//foot 
-             
-
                 flag = -1;
             }
-            else 
+            else
             {
-                fG.DrawRectangle(drawPen, 5, 5, 470, 200);
+                fG.DrawRectangle(drawPen, 5, 5, 470, 200);// greeting page
                 fG.FillRectangle(blackBrush, 0, 200, 490, 300);
-
-                fG.FillRectangle(redBrush, 10, 5,465, 300);
-
+                fG.FillRectangle(redBrush, 10, 5, 465, 300);
                 fG.DrawString("Greetings  ", tital, blackBrush, 100, 30);
                 fG.DrawString("This is a card   ", tital, blackBrush, 100, 60);
                 fG.DrawString("Greetings Traveler  ", tital, blackBrush, 100, 100);
 
                 flag += 1;
-            }
-
-
+                    }
         }
     }
 }
