@@ -1,4 +1,6 @@
-﻿using System;
+﻿//Andrew henderson 27 sept 2017 
+// this project demonstrates timing and things  
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -32,14 +34,14 @@ namespace Greating_card
             Font arialFont = new Font("Arial", 10, FontStyle.Bold);
             Font georgiaFont = new Font("Georgia", 10, FontStyle.Bold);
             Font tital = new Font("Arial", 30, FontStyle.Bold);
-            SolidBrush drawBrush = new SolidBrush(Color.Red);
+            SolidBrush greenBrush = new SolidBrush(Color.Green);
             Graphics onScreen = this.CreateGraphics(); //Sets up on-screen graphics
             Bitmap bm = new Bitmap(this.Width, this.Height); //bitmap area size of whole screen
             Graphics offScreen = Graphics.FromImage(bm); //Sets off-screen graphics to the bitmap
 
 
             fG.Clear(Color.White);
-            SolidBrush blackBrush = new SolidBrush(Color.Black);
+            SolidBrush blackBrush = new SolidBrush(Color.Black); //creating brushs
             SolidBrush whiteBrush = new SolidBrush(Color.White);
             SolidBrush redBrush = new SolidBrush(Color.Red);
             Pen drawPen = new Pen(Color.Yellow, 20);
@@ -47,6 +49,35 @@ namespace Greating_card
             upSound.Play();
             if (flag == 1) 
             {
+                fG.Clear(Color.Black); //draw stars 
+                fG.FillEllipse(whiteBrush, 250, 100, 10, 10);
+                fG.FillEllipse(whiteBrush, 295, 150, 10, 10); // left lowwer u
+                fG.FillEllipse(whiteBrush, 345, 175, 10, 10); // bothem of top U  
+                fG.FillEllipse(whiteBrush, 380, 135, 10, 10); //
+                fG.FillEllipse(whiteBrush, 420, 70, 10, 10); //top cirle
+                fG.FillEllipse(whiteBrush, 300, 245, 10, 10); //middel
+                fG.FillEllipse(whiteBrush, 305, 305, 30, 30); // big one
+                fG.FillEllipse(whiteBrush, 235, 235, 10, 10);
+                fG.FillEllipse(whiteBrush, 170, 245, 10, 10);
+                fG.FillEllipse(whiteBrush, 165, 325, 10, 10); //leg 
+                fG.FillEllipse(whiteBrush, 75, 285, 10, 10); //upy foot 
+                fG.FillEllipse(whiteBrush, 110, 345, 10, 10);//foot 
+
+                fG.FillEllipse(whiteBrush, 10, 100, 10, 10); //other stars 
+                fG.FillEllipse(whiteBrush, 405, 350, 10, 10); 
+                fG.FillEllipse(whiteBrush, 35, 175, 10, 10);  
+                fG.FillEllipse(whiteBrush, 30, 135, 10, 10); //
+                fG.FillEllipse(whiteBrush, 400, 70, 10, 10); 
+                fG.FillEllipse(whiteBrush, 300, 25, 10, 10); 
+                fG.FillEllipse(whiteBrush, 240, 35, 30, 30); 
+                fG.FillEllipse(whiteBrush, 235, 235, 10, 10);
+                fG.FillEllipse(whiteBrush, 190, 275, 10, 10);
+                fG.FillEllipse(whiteBrush, 125, 375, 10, 10); //
+                fG.FillEllipse(whiteBrush, 75, 285, 10, 10); // 
+                fG.FillEllipse(whiteBrush, 190, 395, 10, 10);
+
+
+                Thread.Sleep(1000);
                 fG.Clear(Color.Black); // draw stars 
                 fG.FillEllipse(whiteBrush, 250,100,10,10);
                 fG.FillEllipse(whiteBrush, 295, 150, 10, 10); // left lowwer u
@@ -61,7 +92,7 @@ namespace Greating_card
                 fG.FillEllipse(whiteBrush, 75, 285, 10, 10); //upy foot 
                 fG.FillEllipse(whiteBrush, 110, 345, 10, 10);//foot 
 
-                Thread.Sleep(500);// conect stars 
+                Thread.Sleep(500);// connect stars 
                 fG.DrawLine(starPen, 255, 105, 300, 155); //left top
                 Thread.Sleep(500);
                 fG.DrawLine(starPen, 295, 150, 350, 180);
@@ -86,14 +117,14 @@ namespace Greating_card
                 Thread.Sleep(500);
                 fG.DrawLine(starPen, 170, 250, 80, 290); // uppy leg 
                 Thread.Sleep(1000);
-                fG.DrawString("Virgo constellation ", georgiaFont, drawBrush, 50, 40);
-                fG.DrawString("the virgo constellation is a latin word meaning virgin.  ", arialFont, drawBrush, 10, 400);
+                fG.DrawString("Virgo constellation ", georgiaFont, greenBrush, 50, 40);
+                fG.DrawString("the virgo constellation is a latin word meaning virgin.  ", arialFont, greenBrush, 10, 400);
                 Thread.Sleep(1000);
-                fG.DrawString("the virgo constellation is the second largest constellation in the sky   ", arialFont, drawBrush, 10, 420);
+                fG.DrawString("the virgo constellation is the second largest constellation in the sky   ", arialFont, greenBrush, 10, 420);
                 Thread.Sleep(1000);
                 fG.FillRectangle(blackBrush, 0, 0, 400, 100);
                 Thread.Sleep(100);
-                fG.DrawString("Virgo constellation ", georgiaFont, drawBrush, 100, 40);
+                fG.DrawString("Virgo constellation ", georgiaFont, greenBrush, 100, 40);
 
                 upSound.Play();
 
@@ -111,6 +142,20 @@ namespace Greating_card
                 fG.FillEllipse(redBrush, 110, 345, 10, 10);//foot 
 
                 alarmSound.Play();
+                Thread.Sleep(1000);
+                fG.FillEllipse(greenBrush, 250, 100, 10, 10);
+                fG.FillEllipse(greenBrush, 295, 150, 10, 10); // left lowwer u
+                fG.FillEllipse(greenBrush, 345, 175, 10, 10); // bothem of top U  
+                fG.FillEllipse(greenBrush, 380, 135, 10, 10); //
+                fG.FillEllipse(greenBrush, 420, 70, 10, 10); //top cirle
+                fG.FillEllipse(greenBrush, 300, 245, 10, 10); //middel
+                fG.FillEllipse(greenBrush, 305, 305, 30, 30); // big one
+                fG.FillEllipse(greenBrush, 235, 235, 10, 10);
+                fG.FillEllipse(greenBrush, 170, 245, 10, 10);
+                fG.FillEllipse(greenBrush, 165, 325, 10, 10); //leg 
+                fG.FillEllipse(greenBrush, 75, 285, 10, 10); //upy foot 
+                fG.FillEllipse(greenBrush, 110, 345, 10, 10);//foot 
+             
 
                 flag = -1;
             }
@@ -123,7 +168,7 @@ namespace Greating_card
 
                 fG.DrawString("Greetings  ", tital, blackBrush, 100, 30);
                 fG.DrawString("This is a card   ", tital, blackBrush, 100, 60);
-                fG.DrawString("Greetings Travaler  ", tital, blackBrush, 100, 100);
+                fG.DrawString("Greetings Traveler  ", tital, blackBrush, 100, 100);
 
                 flag += 1;
             }
