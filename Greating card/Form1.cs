@@ -161,7 +161,9 @@ namespace Greating_card
                 fG.DrawString("Greetings Traveler  ", tital, blackBrush, 100, 100);
 
                 flag += 1;
-                    }
+                Thread.Sleep(5000);
+                this.Close();
+              }
         }
     }
 }
